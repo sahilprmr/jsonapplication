@@ -8,7 +8,7 @@ import { Form, FormGroup, NgForm } from '@angular/forms';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  apiUrl = 'http://localhost:3000';
+  apiUrl = 'http://localhost:3000/user';
 
   getAllUser(){
     return this.http.get(this.apiUrl)
@@ -20,6 +20,8 @@ export class AuthService {
 
   registration(userdata : any){
      return this.http.post(this.apiUrl,userdata);
+    //  console.log(userdata + 'from service ');
+     
   }
 
   updateUser(code : any,userdata : any){

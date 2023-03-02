@@ -1,16 +1,45 @@
-<div><form>
+<div class="row">
+  <div class="col-xs-12 col-md-3">
+
+  <form class="form-control"  [formGroup]="registerForm" (ngSubmit)="registerByForm()">
+    
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <label for="exampleInputEmail1">Id</label>
+      <input type="id" class="form-control" id="exampleInputEmail1" formControlName="id"  placeholder="Enter Id">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter Your Name">
     </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+      <small id="passwordHelp" class="form-text text-muted">We'll never share your Password with anyone else.</small>
+    </div>
+    <div class="form-group"> 
+      <label for="role">Role</label>
+      <select class="form-control" id="role" formControlName="role">
+      <option name="admin" id="admin">Admin</option>
+      <option name="guest" id="guest">Guest</option>
+      <option name="user" id="user">User</option>
+      <option name="manager" id="manager">Manager</option>
+    </select>
+    </div>
+    
+      <div class="form-group"   *ngFor="let gender of genders">
+      <input type="radio" class="form-input-radio" formControlName="gender" name="gender" [value]="gender" id={{gender}} >
+      <label for={{gender}}>{{gender}}</label>
+      </div>
+  
+    <button type="submit" class="btn btn-primary">SignUp</button>
+    <div class="row form-group">
+      <p>Already Registered?</p>
+    <a routerLink="/login">Switch To LogIn</a>
     </div>
   </form>
   </div>
+</div>

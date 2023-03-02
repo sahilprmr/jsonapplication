@@ -1,0 +1,12 @@
+.out_cont{
+    background-color: rgb(87, 142, 230);
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;    
+  display: flex;
+  align-items: center;
+}
+.login{
+    display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
