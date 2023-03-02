@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Form, FormGroup, NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,10 @@ export class AuthService {
   }
 
   registration(userdata : any){
-    this.http.post(this.apiUrl,userdata);
+     return this.http.post(this.apiUrl,userdata);
   }
 
   updateUser(code : any,userdata : any){
-    this.http.post(this.apiUrl + '/' + code,userdata);
+     return this.http.post(this.apiUrl + '/' + code,userdata);
   }
 }
